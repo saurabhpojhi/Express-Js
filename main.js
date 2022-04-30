@@ -1,11 +1,18 @@
 const express = require("express");
-const app = express();
-
-//console.log(app);
-const port = 3000;
-app.get("/user", (req,res)=>{
-res/send("hello world");
+const app =express();
+  const port =3000;
+app.get("/",(req,res)=>{
+    res.send("hello world");
 })
-app.listen(300,()=>console.log(`sever runnig on ${port}`));
 
+app.get("/users",(req,res)=>{
+    res.send("user data acced");
+})
 
+// app.post("/users/profile",(req,res)=>{
+//     res.send("user data acced");
+// })
+
+app.listen(port, ()=>{
+    console.log(`Example app listening at http://localhost:${port}`)
+})
